@@ -1,0 +1,24 @@
+{
+  "convertToMp3.sh": {
+    "description": "Converts audio files to MP3",
+    "usage": "convertToMP3.sh *.wav"
+  },
+  "success.sh": {
+    "description": "Random success audio clip",
+    "usage": "success.sh"
+  },
+  "filePicker": {
+    "description": "Prompts options from specified directory",
+    "usage": "node filePicker.sh ~/Music",
+    "also": "benefits from directory having a meta.json"
+  },
+  "audio": {
+    "ignore": true
+  },
+  "logs" : {
+    "ignore": true
+  },
+  "meta.json": {
+    "ignore": true
+  }
+}

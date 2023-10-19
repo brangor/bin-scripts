@@ -1,0 +1,32 @@
+ffmpeg version 6.0 Copyright (c) 2000-2023 the FFmpeg developers
+  built with Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/6.0 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-neon
+  libavutil      58.  2.100 / 58.  2.100
+  libavcodec     60.  3.100 / 60.  3.100
+  libavformat    60.  3.100 / 60.  3.100
+  libavdevice    60.  1.100 / 60.  1.100
+  libavfilter     9.  3.100 /  9.  3.100
+  libswscale      7.  1.100 /  7.  1.100
+  libswresample   4. 10.100 /  4. 10.100
+  libpostproc    57.  1.100 / 57.  1.100
+Input #0, flac, from '01 - Rogério Duprat - Setting The Scene - Rogério Duprat - Setting The Scene.flac':
+  Metadata:
+    artist          : Rogério Duprat - Setting The Scene
+    album           : Setting The Scene - From The Vaults Of KPM
+    track           : 01
+  Duration: 00:03:16.73, start: 0.000000, bitrate: 695 kb/s
+  Stream #0:0: Audio: flac, 44100 Hz, stereo, s16
+Stream mapping:
+  Stream #0:0 -> #0:0 (flac (native) -> mp3 (libmp3lame))
+Press [q] to stop, [?] for help
+Output #0, mp3, to './mp3/01 - Rogério Duprat - Setting The Scene - Rogério Duprat - Setting The Scene.mp3':
+  Metadata:
+    TPE1            : Rogério Duprat - Setting The Scene
+    TALB            : Setting The Scene - From The Vaults Of KPM
+    TRCK            : 01
+    TSSE            : Lavf60.3.100
+  Stream #0:0: Audio: mp3, 44100 Hz, stereo, s16p
+    Metadata:
+      encoder         : Lavc60.3.100 libmp3lame
+size=       0kB time=-577014:32:22.77 bitrate=  -0.0kbits/s speed=N/A    size=    1024kB time=00:00:38.24 bitrate= 219.3kbits/s speed=76.3x    size=    2304kB time=00:01:15.86 bitrate= 248.8kbits/s speed=75.7x    size=    3328kB time=00:01:53.39 bitrate= 240.4kbits/s speed=75.5x    size=    4608kB time=00:02:30.91 bitrate= 250.1kbits/s speed=75.4x    size=    5888kB time=00:03:08.34 bitrate= 256.1kbits/s speed=75.2x    size=    6197kB time=00:03:16.72 bitrate= 258.1kbits/s speed=75.8x    
+video:0kB audio:6197kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.005783%
