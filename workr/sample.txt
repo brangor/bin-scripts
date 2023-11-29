@@ -1,0 +1,382 @@
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/jobs/69487/furnishings/details_of_fabric_edit/5144/629/edit/3995272" for ::1 at 2023-11-28 10:28:18 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#details_of_fabric_edit as */*
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"id"=>"69487", "colour_group_id"=>"5144", "colour_id"=>"629", "furn_id"=>"3995272"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.3ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 5144], ["colour_id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:139
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.3ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 5144], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:142
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/details_of_fabric_edit.js.erb
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/details_of_fabric_edit.js.erb (0.7ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 74ms (Views: 47.9ms | ActiveRecord: 1.0ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started PATCH "/jobs/69487/furnishings/3995272" for ::1 at 2023-11-28 10:28:20 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#update as JS
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"utf8"=>"✓", "furnishing"=>{"data_source"=>"1", "supplier_id"=>"31", "window_name"=>"1", "plan_width"=>"200", "plan_drop"=>"200", "outside_box_measurement"=>"0", "room_id"=>"40", "colour_group_id"=>"5144", "colour_id"=>"629", "has_piping"=>"0", "top_piping"=>"", "bottom_piping"=>"", "contrast_piping"=>"", "piping_fabric_group_id"=>"", "piping_colour_id"=>"", "headboard_projection"=>"100", "return_left"=>"0", "return_right"=>"0", "with_curtain"=>"0", "railroad_fabric"=>"0"}, "type"=>"Pelmet", "fabric_filter"=>"Custom Range", "commit"=>"Update", "job_id"=>"69487", "id"=>"3995272"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.5ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:851
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.7ms)  SELECT "rooms".* FROM "rooms" ORDER BY name ASC
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:862
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.4ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."id" = $1 LIMIT $2  [["id", 3995272], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:74
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.2ms)  BEGIN
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.5ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:28
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.6ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 40], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.5ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."window_name" = $2 AND "furnishings"."job_id" = $3  [["data_source", 3], ["window_name", "1"], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:165
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.3ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.2ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 5144], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :    (4.4ms)  SELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = $1 AND "audits"."auditable_type" = $2  [["auditable_id", 3995272], ["auditable_type", "Furnishing"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Audited::Audit Create (3.0ms)  INSERT INTO "audits" ("auditable_id", "auditable_type", "user_id", "user_type", "action", "audited_changes", "version", "remote_address", "created_at", "request_uuid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["auditable_id", 3995272], ["auditable_type", "Furnishing"], ["user_id", 4665], ["user_type", "User"], ["action", "update"], ["audited_changes", "---\ndata_source:\n- 3\n- 1\n"], ["version", 4], ["remote_address", "::1"], ["created_at", "2023-11-27 23:28:20.406806"], ["request_uuid", "12d5d2e9-c36e-4235-a3d0-33f99250981e"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Pelmet Update (0.7ms)  UPDATE "furnishings" SET "data_source" = $1, "updated_at" = $2 WHERE "furnishings"."id" = $3  [["data_source", 1], ["updated_at", "2023-11-27 23:28:20.385660"], ["id", 3995272]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :    (1.0ms)  COMMIT
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/update.js.erb
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (1.0ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."window_name" = $2 AND "furnishings"."job_id" = $3  [["data_source", 3], ["window_name", "1"], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:165
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.9ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/update.js.erb:5
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.5ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 40], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:15
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.7ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 5144], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:91
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.2ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:93
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.1ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 5144], ["colour_id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:105
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.6ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_update_bay_number.html.erb:2
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_update_bay_number.html.erb (4.0ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_row.html.erb (14.4ms)
+I, [{{CURRENT_DATE}}] (18.5ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.6ms)  SELECT COUNT(*) FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/update.js.erb:8
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE  (0.0ms)  SELECT COUNT(*) FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/update.js.erb:9
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Exists (0.3ms)  SELECT  1 AS one FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 LIMIT $3  [["data_source", 3], ["job_id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/concerns/shared_furnishing_methods.rb:17
+D, [{{CURRENT_DATE}}] DEBUG -- :   Pelmet Load (6.5ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."type" IN ('Pelmet') AND "furnishings"."data_source" != $1 AND "furnishings"."mitred_id" = $2 LIMIT $3  [["data_source", 3], ["mitred_id", 3995272], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/pelmet.rb:275
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/update.js.erb (50.1ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 156ms (Views: 69.3ms | ActiveRecord: 31.4ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/jobs/69487/edit_pelmet_form/3995273" for ::1 at 2023-11-28 10:28:20 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#edit_pelmet_form as */*
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"job_id"=>"69487", "id"=>"3995273"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.6ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:688
+D, [{{CURRENT_DATE}}] DEBUG -- :   Pelmet Load (1.1ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."type" IN ('Pelmet') AND "furnishings"."id" = $1 LIMIT $2  [["id", 3995273], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:689
+D, [{{CURRENT_DATE}}] DEBUG -- :   Supplier Load (0.5ms)  SELECT  "providers".* FROM "providers" WHERE "providers"."type" IN ('Supplier') AND "providers"."id" = $1 LIMIT $2  [["id", 3], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:690
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.2ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:692
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/edit_pelmet_form.js.erb
+D, [{{CURRENT_DATE}}] DEBUG -- :   SQL (4.5ms)  SELECT "colour_groups"."id" AS t0_r0, "colour_groups"."created_at" AS t0_r1, "colour_groups"."updated_at" AS t0_r2, "colour_groups"."name" AS t0_r3, "colour_groups"."supplier_id" AS t0_r4, "colour_groups"."fabric_supplier_id" AS t0_r5, "colour_groups"."active" AS t0_r6, "furnishing_types"."id" AS t1_r0, "furnishing_types"."name" AS t1_r1, "providers"."id" AS t2_r0, "providers"."name" AS t2_r1, "providers"."email" AS t2_r2, "providers"."type" AS t2_r3, "providers"."claim_email" AS t2_r4, "providers"."tracker_reference_id" AS t2_r5 FROM "colour_groups" LEFT OUTER JOIN "colour_groups_furnishing_types" ON "colour_groups_furnishing_types"."colour_group_id" = "colour_groups"."id" LEFT OUTER JOIN "furnishing_types" ON "furnishing_types"."id" = "colour_groups_furnishing_types"."furnishing_type_id" LEFT OUTER JOIN "providers" ON "providers"."id" = "colour_groups"."supplier_id" AND "providers"."type" IN ('Supplier') WHERE "furnishing_types"."name" = $1  [["name", "Pelmet"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:95
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_supplier_selection.html.erb (41.9ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (2.2ms)  SELECT "rooms".* FROM "rooms" ORDER BY name ASC
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_form.html.erb:198
+D, [{{CURRENT_DATE}}] DEBUG -- :   SQL (2.9ms)  SELECT "colour_groups"."id" AS t0_r0, "colour_groups"."created_at" AS t0_r1, "colour_groups"."updated_at" AS t0_r2, "colour_groups"."name" AS t0_r3, "colour_groups"."supplier_id" AS t0_r4, "colour_groups"."fabric_supplier_id" AS t0_r5, "colour_groups"."active" AS t0_r6, "furnishing_types"."id" AS t1_r0, "furnishing_types"."name" AS t1_r1 FROM "colour_groups" LEFT OUTER JOIN "colour_groups_furnishing_types" ON "colour_groups_furnishing_types"."colour_group_id" = "colour_groups"."id" LEFT OUTER JOIN "furnishing_types" ON "furnishing_types"."id" = "colour_groups_furnishing_types"."furnishing_type_id" WHERE "furnishing_types"."name" = $1 AND "colour_groups"."supplier_id" = $2  [["name", "Pelmet"], ["supplier_id", 3]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:109
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE ColourGroup Load (0.0ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_form.html.erb:515
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.4ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_form.html.erb:515
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.2ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_form.html.erb:520
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE FabricDetail Load (0.0ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_form.html.erb:538
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_form.html.erb (98.3ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_edit_form.html.erb (100.4ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_furnishing_edit_loading.js.erb (0.3ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/edit_pelmet_form.js.erb (109.2ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 153ms (Views: 128.6ms | ActiveRecord: 13.0ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/furnishings/pelmet_fabric_ranges_for_fabric_filter/Custom%20Range?furnishing_id=3995273&supplier_id=3&form_type=edit" for ::1 at 2023-11-28 10:28:20 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#pelmet_fabric_ranges_for_fabric_filter as */*
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"furnishing_id"=>"3995273", "supplier_id"=>"3", "form_type"=>"edit", "fabric_filter"=>"Custom Range"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.3ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."id" = $1 LIMIT $2  [["id", 3995273], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:217
+D, [{{CURRENT_DATE}}] DEBUG -- :   Supplier Load (0.4ms)  SELECT  "providers".* FROM "providers" WHERE "providers"."type" IN ('Supplier') AND "providers"."id" = $1 LIMIT $2  [["id", 3], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:218
+D, [{{CURRENT_DATE}}] DEBUG -- :   SQL (1.5ms)  SELECT "colour_groups"."id" AS t0_r0, "colour_groups"."created_at" AS t0_r1, "colour_groups"."updated_at" AS t0_r2, "colour_groups"."name" AS t0_r3, "colour_groups"."supplier_id" AS t0_r4, "colour_groups"."fabric_supplier_id" AS t0_r5, "colour_groups"."active" AS t0_r6, "furnishing_types"."id" AS t1_r0, "furnishing_types"."name" AS t1_r1 FROM "colour_groups" LEFT OUTER JOIN "colour_groups_furnishing_types" ON "colour_groups_furnishing_types"."colour_group_id" = "colour_groups"."id" LEFT OUTER JOIN "furnishing_types" ON "furnishing_types"."id" = "colour_groups_furnishing_types"."furnishing_type_id" WHERE "furnishing_types"."name" = $1 AND "colour_groups"."supplier_id" = $2  [["name", "Pelmet"], ["supplier_id", 3]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:109
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/fabric_ranges_for_fabric_filter.js.erb
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/fabric_ranges_for_fabric_filter.js.erb (4.8ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 88ms (Views: 55.0ms | ActiveRecord: 2.7ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/furnishings/colours_for_detailed_fabric/256/edit/3995273" for ::1 at 2023-11-28 10:28:20 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#colours_for_detailed_fabric_edit as */*
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"fabric_id"=>"256", "id"=>"3995273"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (1.6ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.7ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."id" = $1 LIMIT $2  [["id", 3995273], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:283
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.4ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:284
+D, [{{CURRENT_DATE}}] DEBUG -- :   FurnishingType Load (0.5ms)  SELECT "furnishing_types".* FROM "furnishing_types" INNER JOIN "colour_groups_furnishing_types" ON "furnishing_types"."id" = "colour_groups_furnishing_types"."furnishing_type_id" WHERE "colour_groups_furnishing_types"."colour_group_id" = $1  [["colour_group_id", 256]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:285
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.8ms)  SELECT "colours".* FROM "colours" INNER JOIN "colour_groups_colours" ON "colours"."id" = "colour_groups_colours"."colour_id" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colours"."active" = $2  [["colour_group_id", 256], ["active", true]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:286
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.2ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 1293], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:286
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.2ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:286
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.2ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 696], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:286
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.1ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 905], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:286
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/colours_for_fabric_edit.js.erb
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.4ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/colours_for_fabric_edit.js.erb:24
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/colours_for_fabric_edit.js.erb (2.3ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 65ms (Views: 49.8ms | ActiveRecord: 5.2ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/jobs/69487/furnishings/details_of_fabric_edit/256/498/edit/3995273" for ::1 at 2023-11-28 10:28:20 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#details_of_fabric_edit as */*
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"id"=>"69487", "colour_group_id"=>"256", "colour_id"=>"498", "furn_id"=>"3995273"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.3ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:139
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.2ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:142
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/details_of_fabric_edit.js.erb
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/details_of_fabric_edit.js.erb (0.6ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 72ms (Views: 47.3ms | ActiveRecord: 0.8ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started PATCH "/jobs/69487/furnishings/3995273" for ::1 at 2023-11-28 10:28:22 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#update as JS
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"utf8"=>"✓", "furnishing"=>{"data_source"=>"1", "supplier_id"=>"3", "window_name"=>"1", "plan_width"=>"300", "plan_drop"=>"200", "outside_box_measurement"=>"0", "room_id"=>"55", "colour_group_id"=>"256", "colour_id"=>"498", "has_piping"=>"", "top_piping"=>"", "bottom_piping"=>"", "contrast_piping"=>"", "piping_fabric_group_id"=>"", "piping_colour_id"=>"", "headboard_projection"=>"100", "return_left"=>"1", "return_right"=>"1", "with_curtain"=>"0", "railroad_fabric"=>"0"}, "type"=>"Pelmet", "fabric_filter"=>"Custom Range", "commit"=>"Update", "job_id"=>"69487", "id"=>"3995273"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.5ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:851
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.4ms)  SELECT "rooms".* FROM "rooms" ORDER BY name ASC
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:862
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.3ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."id" = $1 LIMIT $2  [["id", 3995273], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:74
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.3ms)  BEGIN
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.5ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:28
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.3ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 55], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.4ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."window_name" = $2 AND "furnishings"."job_id" = $3  [["data_source", 3], ["window_name", "1"], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:165
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.3ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 40], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:160
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.2ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.3ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.2ms)  ROLLBACK
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/update.js.erb
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.3ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."window_name" = $2 AND "furnishings"."job_id" = $3  [["data_source", 3], ["window_name", "1"], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:165
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.2ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 40], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:160
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_form_error_banner.html.erb (0.6ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/update.js.erb (9.2ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 71ms (Views: 37.6ms | ActiveRecord: 4.6ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/furnishings/69487/check_multiple_furnishings_on_window/?window_name=2&room_id=55&_=1701127696758" for ::1 at 2023-11-28 10:28:29 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#check_multiple_furnishings_on_window as TEXT
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"window_name"=>"2", "room_id"=>"55", "_"=>"1701127696758", "job_id"=>"69487"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.4ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:851
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (5.2ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 AND "furnishings"."type" = $3 AND "furnishings"."room_id" = $4 AND "furnishings"."window_name" = $5 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487], ["type", "Wallpaper"], ["room_id", 55], ["window_name", "2"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:122
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (2.0ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 AND "furnishings"."type" != $3 AND "furnishings"."window_name" = $4 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487], ["type", "Wallpaper"], ["window_name", "2"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:122
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/check_multiple_furnishings_on_window.js.erb
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/check_multiple_furnishings_on_window.js.erb (0.5ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 94ms (Views: 51.0ms | ActiveRecord: 8.0ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/furnishings/69487/check_multiple_furnishings_on_window/?window_name=2&room_id=55&_=1701127696759" for ::1 at 2023-11-28 10:28:30 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#check_multiple_furnishings_on_window as TEXT
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"window_name"=>"2", "room_id"=>"55", "_"=>"1701127696759", "job_id"=>"69487"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.3ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.5ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:851
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (1.2ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 AND "furnishings"."type" = $3 AND "furnishings"."room_id" = $4 AND "furnishings"."window_name" = $5 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487], ["type", "Wallpaper"], ["room_id", 55], ["window_name", "2"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:122
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.6ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 AND "furnishings"."type" != $3 AND "furnishings"."window_name" = $4 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487], ["type", "Wallpaper"], ["window_name", "2"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:122
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/check_multiple_furnishings_on_window.js.erb
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/check_multiple_furnishings_on_window.js.erb (0.4ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 77ms (Views: 45.9ms | ActiveRecord: 2.7ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started PATCH "/jobs/69487/furnishings/3995273" for ::1 at 2023-11-28 10:28:30 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#update as JS
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"utf8"=>"✓", "furnishing"=>{"data_source"=>"1", "supplier_id"=>"3", "window_name"=>"2", "plan_width"=>"300", "plan_drop"=>"200", "outside_box_measurement"=>"0", "room_id"=>"55", "colour_group_id"=>"256", "colour_id"=>"498", "has_piping"=>"0", "top_piping"=>"", "bottom_piping"=>"", "contrast_piping"=>"", "piping_fabric_group_id"=>"", "piping_colour_id"=>"", "headboard_projection"=>"100", "return_left"=>"1", "return_right"=>"1", "with_curtain"=>"0", "railroad_fabric"=>"0"}, "type"=>"Pelmet", "fabric_filter"=>"Custom Range", "commit"=>"Update", "job_id"=>"69487", "id"=>"3995273"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.4ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.4ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:851
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.6ms)  SELECT "rooms".* FROM "rooms" ORDER BY name ASC
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:862
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.3ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."id" = $1 LIMIT $2  [["id", 3995273], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:74
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.2ms)  BEGIN
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.4ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:28
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.2ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 55], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.2ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."window_name" = $2 AND "furnishings"."job_id" = $3  [["data_source", 3], ["window_name", "2"], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:165
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (1.3ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.3ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.5ms)  SELECT MAX("audits"."version") FROM "audits" WHERE "audits"."auditable_id" = $1 AND "audits"."auditable_type" = $2  [["auditable_id", 3995273], ["auditable_type", "Furnishing"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Audited::Audit Create (1.8ms)  INSERT INTO "audits" ("auditable_id", "auditable_type", "user_id", "user_type", "action", "audited_changes", "version", "remote_address", "created_at", "request_uuid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["auditable_id", 3995273], ["auditable_type", "Furnishing"], ["user_id", 4665], ["user_type", "User"], ["action", "update"], ["audited_changes", "---\nwindow_name:\n- '1'\n- '2'\nhas_piping:\n-\n- false\ndata_source:\n- 3\n- 1\n"], ["version", 4], ["remote_address", "::1"], ["created_at", "2023-11-27 23:28:30.153182"], ["request_uuid", "e497ae4f-0539-4522-9fee-ab26ba3c6840"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :   Pelmet Update (1.4ms)  UPDATE "furnishings" SET "window_name" = $1, "has_piping" = $2, "data_source" = $3, "updated_at" = $4 WHERE "furnishings"."id" = $5  [["window_name", "2"], ["has_piping", false], ["data_source", 1], ["updated_at", "2023-11-27 23:28:30.151040"], ["id", 3995273]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.3ms)  COMMIT
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:82
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/update.js.erb
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.3ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."window_name" = $2 AND "furnishings"."job_id" = $3  [["data_source", 3], ["window_name", "2"], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/furnishing.rb:165
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (1.6ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/update.js.erb:5
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.3ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 40], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:15
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.2ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 5144], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:91
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.2ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:93
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.2ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 5144], ["colour_id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:105
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.4ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_update_bay_number.html.erb:2
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_update_bay_number.html.erb (3.8ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_row.html.erb (13.4ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.3ms)  SELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2  [["id", 55], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:15
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.2ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:91
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (0.2ms)  SELECT  "colours".* FROM "colours" WHERE "colours"."id" = $1 LIMIT $2  [["id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:93
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.1ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:105
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE Job Load (0.0ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_update_bay_number.html.erb:2
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_update_bay_number.html.erb (1.2ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_row.html.erb (8.4ms)
+I, [{{CURRENT_DATE}}] (28.0ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.8ms)  SELECT COUNT(*) FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/update.js.erb:8
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE  (0.0ms)  SELECT COUNT(*) FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/update.js.erb:9
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Exists (0.3ms)  SELECT  1 AS one FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 LIMIT $3  [["data_source", 3], ["job_id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/concerns/shared_furnishing_methods.rb:17
+D, [{{CURRENT_DATE}}] DEBUG -- :   Pelmet Load (4.9ms)  SELECT  "furnishings".* FROM "furnishings" WHERE "furnishings"."type" IN ('Pelmet') AND "furnishings"."data_source" != $1 AND "furnishings"."mitred_id" = $2 LIMIT $3  [["data_source", 3], ["mitred_id", 3995273], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/pelmet.rb:275
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/update.js.erb (49.0ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 116ms (Views: 67.7ms | ActiveRecord: 18.5ms)
+
+
+I, [{{CURRENT_DATE}}]  INFO -- : Started GET "/jobs/69487/furnishings" for ::1 at 2023-11-28 10:28:31 +1100
+I, [{{CURRENT_DATE}}]  INFO -- : Processing by FurnishingsController#index as HTML
+I, [{{CURRENT_DATE}}]  INFO -- :   Parameters: {"job_id"=>"69487"}
+D, [{{CURRENT_DATE}}] DEBUG -- :   User Load (0.5ms)  SELECT  "users".* FROM "users" WHERE "users"."is_deleted" = $1 AND "users"."id" = $2 ORDER BY "users"."id" ASC LIMIT $3  [["is_deleted", false], ["id", 4665], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ bin/rails:4
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.4ms)  SELECT "rooms".* FROM "rooms" ORDER BY name ASC
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:862
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.4ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/controllers/furnishings_controller.rb:15
+D, [{{CURRENT_DATE}}] DEBUG -- :   Project Load (2.3ms)  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2  [["id", 8], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/job.rb:273
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendering furnishings/index.html.erb within layouts/application
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_form.html.erb (20.9ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :    (3.7ms)  SELECT DISTINCT "supplier_conversions"."target_supplier_id" FROM "supplier_conversions"
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_map.html.erb:8
+D, [{{CURRENT_DATE}}] DEBUG -- :   Supplier Load (0.5ms)  SELECT  "providers".* FROM "providers" WHERE "providers"."type" IN ('Supplier') AND "providers"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_map.html.erb:8
+D, [{{CURRENT_DATE}}] DEBUG -- :   Supplier Load (0.3ms)  SELECT  "providers".* FROM "providers" WHERE "providers"."type" IN ('Supplier') AND "providers"."id" = $1 LIMIT $2  [["id", 39], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_map.html.erb:8
+D, [{{CURRENT_DATE}}] DEBUG -- :   Supplier Load (0.2ms)  SELECT  "providers".* FROM "providers" WHERE "providers"."type" IN ('Supplier') AND "providers"."id" = $1 LIMIT $2  [["id", 44], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_map.html.erb:8
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_map.html.erb (11.3ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered shared_jobs/_modal_popup.html.erb (0.3ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.7ms)  SELECT COUNT(*) FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_index.html.erb:32
+D, [{{CURRENT_DATE}}] DEBUG -- :   Account Load (1.6ms)  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2  [["id", 2], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/job.rb:337
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE Account Load (0.0ms)  SELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = $1 LIMIT $2  [["id", 2], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/project.rb:28
+D, [{{CURRENT_DATE}}] DEBUG -- :   Jobsite Load (1.1ms)  SELECT  "jobsites".* FROM "jobsites" WHERE "jobsites"."id" = $1 LIMIT $2  [["id", 15179], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/job.rb:297
+D, [{{CURRENT_DATE}}] DEBUG -- :    (0.7ms)  SELECT COUNT(*) FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_index.html.erb:38
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Exists (0.7ms)  SELECT  1 AS one FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 LIMIT $3  [["data_source", 3], ["job_id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/concerns/shared_furnishing_methods.rb:17
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (1.0ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/concerns/shared_furnishing_methods.rb:18
+D, [{{CURRENT_DATE}}] DEBUG -- :   Supplier Load (0.6ms)  SELECT  "providers".* FROM "providers" WHERE "providers"."type" IN ('Supplier') AND "providers"."name" = $1 LIMIT $2  [["name", "HD"], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/concerns/shared_furnishing_methods.rb:162
+D, [{{CURRENT_DATE}}] DEBUG -- :   SQL (2.6ms)  SELECT "furnishings"."id" AS t0_r0, "furnishings"."created_at" AS t0_r1, "furnishings"."updated_at" AS t0_r2, "furnishings"."window_name" AS t0_r3, "furnishings"."room_id" AS t0_r4, "furnishings"."quantity" AS t0_r5, "furnishings"."plan_width" AS t0_r6, "furnishings"."plan_drop" AS t0_r7, "furnishings"."colour_group_id" AS t0_r8, "furnishings"."colour_id" AS t0_r9, "furnishings"."bracket_colour_id" AS t0_r10, "furnishings"."spring_assist" AS t0_r11, "furnishings"."control_side" AS t0_r12, "furnishings"."chain_type_chrome" AS t0_r13, "furnishings"."eclipse_base_bar_colour_id" AS t0_r14, "furnishings"."linked" AS t0_r15, "furnishings"."motor" AS t0_r16, "furnishings"."install_type" AS t0_r17, "furnishings"."job_id" AS t0_r18, "furnishings"."custom_chain_length_option" AS t0_r19, "furnishings"."custom_chain_length" AS t0_r20, "furnishings"."site_width" AS t0_r21, "furnishings"."site_drop" AS t0_r22, "furnishings"."linked_position" AS t0_r23, "furnishings"."roll_direction_back" AS t0_r24, "furnishings"."motor_type" AS t0_r25, "furnishings"."dual" AS t0_r26, "furnishings"."dual_position_room" AS t0_r27, "furnishings"."linked_id" AS t0_r28, "furnishings"."order_received" AS t0_r29, "furnishings"."type" AS t0_r30, "furnishings"."tilt_system" AS t0_r31, "furnishings"."panel_quantity" AS t0_r32, "furnishings"."blade_size" AS t0_r33, "furnishings"."stack_side" AS t0_r34, "furnishings"."slates_chained" AS t0_r35, "furnishings"."track_colour_id" AS t0_r36, "furnishings"."operation" AS t0_r37, "furnishings"."fabric_width" AS t0_r38, "furnishings"."pattern" AS t0_r39, "furnishings"."pattern_type_vertical" AS t0_r40, "furnishings"."headboard_projection" AS t0_r41, "furnishings"."cord_lock" AS t0_r42, "furnishings"."recess" AS t0_r43, "furnishings"."headrail_system" AS t0_r44, "furnishings"."lining" AS t0_r45, "furnishings"."cleat" AS t0_r46, "furnishings"."cleat_type" AS t0_r47, "furnishings"."fixing_type" AS t0_r48, "furnishings"."has_returns" AS t0_r49, "furnishings"."facia" AS t0_r50, "furnishings"."facia_size_same" AS t0_r51, "furnishings"."facia_common_size" AS t0_r52, "furnishings"."dual_bracket_type" AS t0_r53, "furnishings"."railroad_fabric" AS t0_r54, "furnishings"."outside_box_measurement" AS t0_r55, "furnishings"."shape" AS t0_r56, "furnishings"."num_curtains" AS t0_r57, "furnishings"."return_left" AS t0_r58, "furnishings"."return_right" AS t0_r59, "furnishings"."heading_type" AS t0_r60, "furnishings"."mitre_left" AS t0_r61, "furnishings"."mitred_id" AS t0_r62, "furnishings"."mitred" AS t0_r63, "furnishings"."has_piping" AS t0_r64, "furnishings"."contrast_piping" AS t0_r65, "furnishings"."piping_fabric_group_id" AS t0_r66, "furnishings"."piping_colour_id" AS t0_r67, "furnishings"."top_piping" AS t0_r68, "furnishings"."bottom_piping" AS t0_r69, "furnishings"."blade_size_in_mm" AS t0_r70, "furnishings"."layout_code" AS t0_r71, "furnishings"."has_frame" AS t0_r72, "furnishings"."has_frame_top" AS t0_r73, "furnishings"."has_frame_bottom" AS t0_r74, "furnishings"."has_frame_right" AS t0_r75, "furnishings"."has_frame_left" AS t0_r76, "furnishings"."fullness" AS t0_r77, "furnishings"."eyelet_colour_id" AS t0_r78, "furnishings"."railroad_group" AS t0_r79, "furnishings"."switch_linked" AS t0_r80, "furnishings"."apartment_id" AS t0_r81, "furnishings"."hinge_colour_id" AS t0_r82, "furnishings"."frame_type_id" AS t0_r83, "furnishings"."t_post_qty" AS t0_r84, "furnishings"."center_of_t_post_1" AS t0_r85, "furnishings"."center_of_t_post_2" AS t0_r86, "furnishings"."center_of_t_post_3" AS t0_r87, "furnishings"."center_of_t_post_4" AS t0_r88, "furnishings"."center_of_t_post_5" AS t0_r89, "furnishings"."center_of_t_post_6" AS t0_r90, "furnishings"."light_block" AS t0_r91, "furnishings"."mid_rail_qty" AS t0_r92, "furnishings"."mid_rail_height_1" AS t0_r93, "furnishings"."mid_rail_height_2" AS t0_r94, "furnishings"."option_id" AS t0_r95, "furnishings"."chain_type" AS t0_r96, "furnishings"."chain_colour" AS t0_r97, "furnishings"."tape_type" AS t0_r98, "furnishings"."track_type" AS t0_r99, "furnishings"."horizontal_mounting_position" AS t0_r100, "furnishings"."vertical_mounting_position" AS t0_r101, "furnishings"."extension_brackets" AS t0_r102, "furnishings"."flick_stick_length" AS t0_r103, "furnishings"."with_pelmet" AS t0_r104, "furnishings"."with_curtain" AS t0_r105, "furnishings"."hinge_side" AS t0_r106, "furnishings"."supplier_id" AS t0_r107, "furnishings"."motor_remote_channel" AS t0_r108, "furnishings"."deduction_length_option" AS t0_r109, "furnishings"."deduction_length" AS t0_r110, "furnishings"."ordered_width" AS t0_r111, "furnishings"."priority" AS t0_r112, "furnishings"."bay_number" AS t0_r113, "furnishings"."qm_fascia" AS t0_r114, "furnishings"."qm_fascia_colour" AS t0_r115, "furnishings"."track_supplier_id" AS t0_r116, "furnishings"."hook_position" AS t0_r117, "furnishings"."lead_weight" AS t0_r118, "furnishings"."tape_colour" AS t0_r119, "furnishings"."account_window_type_id" AS t0_r120, "furnishings"."bend" AS t0_r121, "furnishings"."remote_option" AS t0_r122, "furnishings"."custom_width" AS t0_r123, "furnishings"."custom_drop" AS t0_r124, "furnishings"."stock_order" AS t0_r125, "furnishings"."stocked_blind_id" AS t0_r126, "furnishings"."sliding_door" AS t0_r127, "furnishings"."cut_down_width_option" AS t0_r128, "furnishings"."cut_down_width" AS t0_r129, "furnishings"."bracket_covers" AS t0_r130, "furnishings"."data_source" AS t0_r131, "furnishings"."dual_partner" AS t0_r132, "furnishings"."floor_position" AS t0_r133, "colour_groups"."id" AS t1_r0, "colour_groups"."created_at" AS t1_r1, "colour_groups"."updated_at" AS t1_r2, "colour_groups"."name" AS t1_r3, "colour_groups"."supplier_id" AS t1_r4, "colour_groups"."fabric_supplier_id" AS t1_r5, "colour_groups"."active" AS t1_r6 FROM "furnishings" LEFT OUTER JOIN "colour_groups" ON "colour_groups"."id" = "furnishings"."colour_group_id" WHERE "furnishings"."type" IN ('RollerBlind') AND "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 AND "furnishings"."supplier_id" = $3 AND "colour_groups"."name" IN ($4, $5, $6, $7, $8, $9, $10) ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487], ["supplier_id", 1], ["name", "Neotec"], ["name", "Zen"], ["name", "Baltic BO"], ["name", "Baltic LF"], ["name", "Linna BO"], ["name", "Linna LF"], ["name", "Petra"]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/models/concerns/shared_furnishing_methods.rb:220
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered shared/_change_supplier_button.html.erb (16.4ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :   Job Load (0.3ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_index.html.erb:55
+D, [{{CURRENT_DATE}}] DEBUG -- :   Furnishing Load (0.8ms)  SELECT "furnishings".* FROM "furnishings" WHERE "furnishings"."data_source" != $1 AND "furnishings"."job_id" = $2 ORDER BY furnishings.priority ASC, furnishings.created_at ASC  [["data_source", 3], ["job_id", 69487]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_index.html.erb:81
+D, [{{CURRENT_DATE}}] DEBUG -- :   Room Load (0.5ms)  SELECT "rooms".* FROM "rooms" WHERE "rooms"."id" IN ($1, $2)  [["id", 40], ["id", 55]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_index.html.erb:81
+D, [{{CURRENT_DATE}}] DEBUG -- :   Colour Load (2.0ms)  SELECT "colours".* FROM "colours" WHERE "colours"."id" IN ($1, $2)  [["id", 629], ["id", 498]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_index.html.erb:81
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (0.3ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 5144], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:91
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.5ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 5144], ["colour_id", 629], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:105
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE Job Load (0.0ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_update_bay_number.html.erb:2
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_update_bay_number.html.erb (2.2ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_row.html.erb (10.2ms)
+D, [{{CURRENT_DATE}}] DEBUG -- :   ColourGroup Load (1.5ms)  SELECT  "colour_groups".* FROM "colour_groups" WHERE "colour_groups"."id" = $1 LIMIT $2  [["id", 256], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:91
+D, [{{CURRENT_DATE}}] DEBUG -- :   FabricDetail Load (0.3ms)  SELECT  "colour_groups_colours".* FROM "colour_groups_colours" WHERE "colour_groups_colours"."colour_group_id" = $1 AND "colour_groups_colours"."colour_id" = $2 LIMIT $3  [["colour_group_id", 256], ["colour_id", 498], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/pelmets/_pelmet_row.html.erb:105
+D, [{{CURRENT_DATE}}] DEBUG -- :   CACHE Job Load (0.0ms)  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT $2  [["id", 69487], ["LIMIT", 1]]
+D, [{{CURRENT_DATE}}] DEBUG -- :   ↳ app/views/furnishings/_update_bay_number.html.erb:2
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_update_bay_number.html.erb (1.2ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered pelmets/_pelmet_row.html.erb (7.5ms)
+I, [{{CURRENT_DATE}}] (23.0ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/_index.html.erb (173.4ms)
+I, [{{CURRENT_DATE}}]  INFO -- :   Rendered furnishings/index.html.erb within layouts/application (175.4ms)
+I, [{{CURRENT_DATE}}]  INFO -- : Completed 200 OK in 344ms (Views: 283.5ms | ActiveRecord: 38.0ms)
+
