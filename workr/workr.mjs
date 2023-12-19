@@ -70,7 +70,7 @@ async function readFileLineByLine(filePath) {
 
 function main() {
   setTerminalTitle('debug');
-  const logFilePath = path.join('./', 'file.txt');
+  const logFilePath = path.join('./', 'sample.txt');
   readFileLineByLine(logFilePath);
 
   // Simulate a build every 5 minutes

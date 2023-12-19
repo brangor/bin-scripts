@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 notify() {
-  osascript -e "display notification \"$1\" with title \"Folder Action\""
+  osascript -e "display notification \"$1\" with title \"MOV TO GIF folder action\""
 }
 
 
@@ -31,7 +31,5 @@ function movtogif() {
     else
       notify "ffmpeg failed :("
     fi
-  else
-    notify "Not a .mov file!"
   fi
 }
